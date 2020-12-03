@@ -95,7 +95,7 @@ class MainActivity2 : AppCompatActivity() {
 
     fun requestGif(metGoal: Boolean) {
         val query: String = if(metGoal) "success" else "failed"
-        val url = StringBuilder("https://api.giphy.com/v1/gifs/random?api_key=7y621Yx21paBt8l85Au8LAeqpw1CDKTy&tag=$query").toString()
+        val url = StringBuilder("https://api.giphy.com/v1/gifs/random?api_key={API KEY}&tag=$query").toString()
         val stringRequest = object : StringRequest(com.android.volley.Request.Method.GET, url,
                 com.android.volley.Response.Listener<String> { response ->
                     val result: GiphyResult = gson.fromJson(response, GiphyResult::class.java)
