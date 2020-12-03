@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun requestWeather() {
-        val url = StringBuilder("https://api.openweathermap.org/data/2.5/onecall?lat=30.27&lon=-97.7431&exclude=current,minutely,hourly&units=imperial&appid=f80838b24969614eb8fcf2eb5308511c").toString()
+        val url = StringBuilder("https://api.openweathermap.org/data/2.5/onecall?lat=30.27&lon=-97.7431&exclude=current,minutely,hourly&units=imperial&appid={API Key}").toString()
         val stringRequest = object : StringRequest(com.android.volley.Request.Method.GET, url,
                 com.android.volley.Response.Listener<String> { response ->
                     mostRecentWeatherResult = gson.fromJson(response, WeatherResult::class.java)
